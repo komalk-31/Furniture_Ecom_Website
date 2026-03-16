@@ -1,0 +1,285 @@
+
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500&display=swap');
+
+/* ── Variables ── */
+:root {
+  --cream: #f7f3ee;
+  --warm-white: #fdfaf6;
+  --terracotta: #b85c38;
+  --terracotta-hover: #9a4a2c;
+  --sand: #e8ddd0;
+  --taupe: #c4b5a5;
+  --charcoal: #2a2420;
+  --mid: #7a6e66;
+  --light-border: #ede6dc;
+  --shadow: 0 4px 24px rgba(42, 36, 32, 0.08);
+  --shadow-hover: 0 16px 48px rgba(42, 36, 32, 0.16);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Base ── */
+body {
+  background-color: var(--warm-white);
+  font-family: 'Jost', sans-serif;
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Hero Section ── */
+.hero-section {
+  position: relative;
+  height: 560px !important;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(30, 20, 15, 0.62) 0%,
+    rgba(30, 20, 15, 0.25) 60%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  text-align: left !important;
+  max-width: 560px;
+}
+
+.hero-section h1.display-4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.hero-section p.lead {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* Shop Now button */
+.hero-section .btn-warning {
+  background-color: var(--terracotta);
+  border: none;
+  color: #fff;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: 3px;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 16px rgba(184, 92, 56, 0.35);
+}
+
+.hero-section .btn-warning:hover {
+  background-color: var(--terracotta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 92, 56, 0.45);
+  color: #fff;
+}
+
+/* ── Section title ── */
+.container h2.fw-bold,
+.container h2.text-center {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  letter-spacing: 0.01em;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container h2.fw-bold::after,
+.container h2.text-center::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--terracotta);
+  margin: 0.5rem auto 0;
+}
+
+/* ── Product Cards ── */
+.product-card {
+  border: none !important;
+  background: var(--warm-white);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.8rem;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.product-card .card-img-top {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background-color: var(--cream);
+  transition: transform var(--transition);
+}
+
+.product-card:hover .card-img-top {
+  transform: scale(1.04);
+}
+
+.product-card .card-body {
+  padding: 1.2rem 1rem 1.4rem;
+  background: var(--warm-white);
+}
+
+.product-card .card-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+
+.product-card .text-muted {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--mid) !important;
+  margin-bottom: 1rem;
+}
+
+/* ── Add to Cart button ── */
+.product-card .btn-dark {
+  background-color: var(--charcoal);
+  border: 2px solid var(--charcoal);
+  color: #fff;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  border-radius: 3px;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.product-card .btn-dark:hover {
+  background-color: transparent;
+  color: var(--charcoal);
+  border-color: var(--charcoal);
+  transform: none;
+}
+
+/* ── Featured section spacing ── */
+.container.mt-5 {
+  padding-bottom: 4rem;
+}
+
+/* ── Subtle page entry animation ── */
+.hero-section {
+  animation: heroPan 8s ease-in-out infinite alternate;
+}
+
+@keyframes heroPan {
+  from { background-position: center 40%; }
+  to   { background-position: center 60%; }
+}
+
+.product-card {
+  animation: fadeUp 0.5s ease both;
+}
+
+.col-md-4:nth-child(1) .product-card { animation-delay: 0.05s; }
+.col-md-4:nth-child(2) .product-card { animation-delay: 0.15s; }
+.col-md-4:nth-child(3) .product-card { animation-delay: 0.25s; }
+.col-md-4:nth-child(4) .product-card { animation-delay: 0.35s; }
+.col-md-4:nth-child(5) .product-card { animation-delay: 0.45s; }
+.col-md-4:nth-child(6) .product-card { animation-delay: 0.55s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 420px !important;
+  }
+
+  .hero-section h1.display-4 {
+    font-size: 2.4rem;
+  }
+
+  .hero-section .container {
+    text-align: center !important;
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .product-card .card-img-top {
+    height: 200px;
+  }
+}
+
+.category-section{
+padding:60px 0;
+background:#f7f3ef;
+text-align:center;
+}
+
+.category-container{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.category-item{
+text-decoration:none;
+color:#333;
+}
+
+.category-item img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+transition:0.3s;
+border:4px solid #eee;
+}
+
+.category-item img:hover{
+transform:scale(1.1);
+border-color:#c46a2d;
+}
+
+.category-item p{
+margin-top:10px;
+font-weight:500;
+}
